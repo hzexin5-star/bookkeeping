@@ -38,4 +38,4 @@ Copyright (c) 2026 hzexin5-star. All rights reserved.
 
 ## 联系
 
-订阅、退款、商用授权：见 <https://ko-fi.com/hzexin5-star> 或仓库 Issue。
+订阅、退款、商用授权：见爱发电 <https://afdian.com/a/hzexin5-star> 或仓库 Issue。

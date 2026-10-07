@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org/)
 [![Codex Skill](https://img.shields.io/badge/Codex-Skill-16A34A.svg)](SKILL.md)
-[![Pro](https://img.shields.io/badge/Pro-%245%2Fmonth-ff69b4.svg)](PRICING.md)
+[![Pro](https://img.shields.io/badge/Pro-%C2%A536%2Fmonth-ff69b4.svg)](PRICING.md)
 
 一个用于 [Codex](https://chatgpt.com/codex) 的个人记账 skill：录入或批量导入收支，按分类 / 账户 / 时间区间汇总，查询结余，并生成 Markdown 报表。
 
@@ -22,9 +22,9 @@
 | 版本 | 价格 | 内容 |
 | --- | --- | --- |
 | **Free**（本仓库） | 免费 · MIT | 记账、账单导入、统计汇总、账户结余、Markdown 报表 |
-| **Pro** | **$5 / 月** | 以上全部 ＋ 可视化 HTML 仪表盘、预算与超支提醒、优先支持 |
+| **Pro** | **¥36 / 月**（约 $5） | 以上全部 ＋ 可视化 HTML 仪表盘、预算与超支提醒、优先支持 |
 
-Pro 订阅：<https://ko-fi.com/hzexin5-star> ｜ 详见 [PRICING.md](PRICING.md)
+Pro 订阅：爱发电 <https://afdian.com/a/hzexin5-star> ｜ 详见 [PRICING.md](PRICING.md)
 
 > 只想记账的话，**免费版就够了**——功能完整、永久免费。
 
@@ -156,7 +156,11 @@ id,date,type,category,amount,account,note
 bookkeeping/
 ├── SKILL.md              # skill 主体指令
 ├── README.md             # 本文件
-├── LICENSE               # MIT
+├── PRICING.md            # Free / Pro 定价说明
+├── LICENSE               # MIT（Free 版）
+├── LICENSE-PRO.md        # Pro 订阅授权条款
+├── .github/
+│   └── FUNDING.yml       # Sponsor 按钮 → 爱发电
 ├── agents/
 │   └── openai.yaml       # UI 元数据与调用策略
 ├── examples/
