@@ -3,9 +3,15 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org/)
 [![Codex Skill](https://img.shields.io/badge/Codex-Skill-16A34A.svg)](SKILL.md)
-[![Pro](https://img.shields.io/badge/Pro-%C2%A536%2Fmonth-ff69b4.svg)](PRICING.md)
+[![Pro](https://img.shields.io/badge/Pro-%245%2Fmonth-ff69b4.svg)](PRICING.md)
 
 一个用于 [Codex](https://chatgpt.com/codex) 的个人记账 skill：录入或批量导入收支，按分类 / 账户 / 时间区间汇总，查询结余，并生成 Markdown 报表。
+
+## 关于作者与产品
+
+独立开发者，销售数字产品 **Bookkeeping Pro**（Codex 记账工具），订阅制 **$5/月**；同时提供 **MIT 开源的免费版本**（即本仓库）。
+
+Independent developer selling **Bookkeeping Pro**, a bookkeeping skill for Codex — **$5/month subscription**, with a free **MIT-licensed** open-source edition (this repository).
 
 ## 特性
 
@@ -22,9 +28,9 @@
 | 版本 | 价格 | 内容 |
 | --- | --- | --- |
 | **Free**（本仓库） | 免费 · MIT | 记账、账单导入、统计汇总、账户结余、Markdown 报表 |
-| **Pro** | **¥36 / 月**（约 $5） | 以上全部 ＋ 可视化 HTML 仪表盘、预算与超支提醒、优先支持 |
+| **Pro** | **$5 / 月** | 以上全部 ＋ 可视化 HTML 仪表盘、预算与超支提醒、优先支持 |
 
-Pro 订阅：国内走爱发电 <https://afdian.com/a/hzexin5-star>，海外走 Ko-fi <https://ko-fi.com/ireliaaaa> ｜ 详见 [PRICING.md](PRICING.md)
+Pro 订阅：Ko-fi <https://ko-fi.com/ireliaaaa> ｜ 详见 [PRICING.md](PRICING.md)
 
 > 只想记账的话，**免费版就够了**——功能完整、永久免费。
 
@@ -160,7 +166,7 @@ bookkeeping/
 ├── LICENSE               # MIT（Free 版）
 ├── LICENSE-PRO.md        # Pro 订阅授权条款
 ├── .github/
-│   └── FUNDING.yml       # Sponsor 按钮 → 爱发电 / Ko-fi
+│   └── FUNDING.yml       # Sponsor 按钮 → Ko-fi
 ├── agents/
 │   └── openai.yaml       # UI 元数据与调用策略
 ├── examples/

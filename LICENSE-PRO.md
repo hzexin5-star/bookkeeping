@@ -38,4 +38,4 @@ Copyright (c) 2026 hzexin5-star. All rights reserved.
 
 ## 联系
 
-订阅、退款、商用授权：见爱发电 <https://afdian.com/a/hzexin5-star>（国内）或 Ko-fi <https://ko-fi.com/ireliaaaa>（海外），也可直接提 Issue。
+订阅、退款、商用授权：见 Ko-fi <https://ko-fi.com/ireliaaaa>，也可直接提 Issue。
