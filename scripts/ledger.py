@@ -482,13 +482,14 @@ def build_mapping(header: list[str], overrides: dict) -> dict:
     normalized = [normalize_header(cell) for cell in header]
 
     for field in FIELD_ORDER:
-        aliases = {normalize_header(alias) for alias in HEADER_ALIASES[field]}
-        for index, key in enumerate(normalized):
-            if index in used or not key:
-                continue
-            if key in aliases:
+        for alias in (normalize_header(a) for a in HEADER_ALIASES[field]):
+            for index, key in enumerate(normalized):
+                if index in used or not key or key != alias:
+                    continue
                 mapping[field] = index
                 used.add(index)
+                break
+            if field in mapping:
                 break
 
     for field in FIELD_ORDER_FALLBACK:
@@ -496,14 +497,17 @@ def build_mapping(header: list[str], overrides: dict) -> dict:
             continue
         aliases = [normalize_header(a) for a in HEADER_ALIASES[field] if len(normalize_header(a)) >= 2]
         excludes = [normalize_header(x) for x in FIELD_EXCLUDES.get(field, ())]
-        for index, key in enumerate(normalized):
-            if index in used or not key:
-                continue
-            if any(bad in key for bad in excludes):
-                continue
-            if any(alias in key for alias in aliases):
-                mapping[field] = index
-                used.add(index)
+        for alias in aliases:
+            for index, key in enumerate(normalized):
+                if index in used or not key:
+                    continue
+                if any(bad in key for bad in excludes):
+                    continue
+                if alias in key:
+                    mapping[field] = index
+                    used.add(index)
+                    break
+            if field in mapping:
                 break
 
     for field, spec in overrides.items():

@@ -28,6 +28,20 @@ git clone https://github.com/<you>/bookkeeping.git "$env:USERPROFILE\.codex\skil
 
 也可以下载 ZIP 解压到 `~/.codex/skills/bookkeeping`。之后 Codex 会以 `$bookkeeping` 列出该 skill。
 
+## 快速试用
+
+仓库自带两份示例账单（一份微信账单、一份银行流水），可以直接跑通全流程：
+
+```bash
+python scripts/ledger.py import examples/wechat-bill-sample.csv --account 微信 --dry-run
+python scripts/ledger.py import examples/wechat-bill-sample.csv --account 微信
+python scripts/ledger.py import examples/bank-bill-sample.csv
+python scripts/ledger.py summary --month 2026-10
+python scripts/ledger.py balance
+```
+
+账本默认写在当前目录的 `ledger.csv`，该文件已在 `.gitignore` 中排除，不会被提交。
+
 ## 使用
 
 在 Codex 里直接用自然语言，例如：
@@ -129,6 +143,9 @@ bookkeeping/
 ├── LICENSE               # MIT
 ├── agents/
 │   └── openai.yaml       # UI 元数据与调用策略
+├── examples/
+│   ├── wechat-bill-sample.csv   # 微信账单示例
+│   └── bank-bill-sample.csv     # 银行流水示例
 ├── scripts/
 │   ├── ledger.py         # 记账 / 统计 / 导入 CLI
 │   └── tabular.py        # 零依赖 CSV / XLSX 读取（标准库实现）
