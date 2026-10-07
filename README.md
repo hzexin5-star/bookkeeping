@@ -1,10 +1,12 @@
 # bookkeeping · 账目统计
 
-一个用于 [Codex](https://chatgpt.com/codex) 的个人记账 skill：录入收支，按分类 / 账户 / 时间区间汇总，查询结余，并生成 Markdown 报表。
+一个用于 [Codex](https://chatgpt.com/codex) 的个人记账 skill：录入或批量导入收支，按分类 / 账户 / 时间区间汇总，查询结余，并生成 Markdown 报表。
 
 ## 特性
 
-- **零依赖**：纯 Python 3 标准库，无需 `pip install`。
+- **零依赖**：纯 Python 3 标准库，无需 `pip install`。XLSX 解析也是自己实现的，不依赖 openpyxl / pandas。
+- **批量导入账单**：读 `.csv` / `.xlsx`，自动识别编码（UTF-8 / GBK）、表头位置与列含义，兼容「收入支出分列」和「带正负号金额」两类账单。
+- **自动去重**：按 `日期 + 类型 + 金额 + 分类 + 账户 + 备注` 判重，同一份账单重复导入不会产生重复记录。
 - **数据可迁移**：账本是一个 UTF-8（带 BOM）CSV，Excel、Numbers、脚本都能直接打开，中文不乱码。
 - **多维统计**：按月份或任意区间，按分类、账户汇总收入与支出。
 - **一键报表**：生成 Markdown 格式的账目报表，便于贴进笔记或继续加工。
@@ -31,6 +33,7 @@ git clone https://github.com/<you>/bookkeeping.git "$env:USERPROFILE\.codex\skil
 在 Codex 里直接用自然语言，例如：
 
 - “记一笔，今天午饭 35.5，微信付的”
+- “把这个月的微信账单导入进去”
 - “统计一下这个月的收支”
 - “看看我各账户的结余”
 - “导出一份 10 月的账目报表”
@@ -39,6 +42,7 @@ git clone https://github.com/<you>/bookkeeping.git "$env:USERPROFILE\.codex\skil
 
 ```bash
 python scripts/ledger.py add --type expense --category 餐饮 --amount 35.5 --account 微信 --note 午饭
+python scripts/ledger.py import 账单.xlsx --sheet 微信支付 --account 微信 --dry-run
 python scripts/ledger.py summary --month 2026-10
 python scripts/ledger.py report --month 2026-10 --out 账目报表-2026-10.md
 ```
@@ -48,6 +52,7 @@ python scripts/ledger.py report --month 2026-10 --out 账目报表-2026-10.md
 | 命令 | 说明 |
 | --- | --- |
 | `add` | 新增一笔收支 |
+| `import` | 从 CSV / XLSX 账单批量导入（自动识别列、自动去重） |
 | `list` | 列出明细，可按区间 / 类型 / 分类 / 账户筛选 |
 | `summary` | 按区间汇总总收入、总支出、净结余与分类占比 |
 | `balance` | 按账户统计净结余 |
@@ -63,6 +68,39 @@ python scripts/ledger.py report --month 2026-10 --out 账目报表-2026-10.md
 - `--json`：以 JSON 输出，便于二次处理
 
 用 `--ledger <path>` 指定账本文件，默认是当前目录下的 `ledger.csv`。
+
+## 导入账单
+
+```bash
+# 先预览，确认列映射和金额方向无误
+python scripts/ledger.py import 账单.xlsx --account 微信 --dry-run
+
+# 确认无误后正式导入
+python scripts/ledger.py import 账单.xlsx --account 微信
+```
+
+导入相关参数：
+
+| 参数 | 说明 |
+| --- | --- |
+| `--sheet` | xlsx 工作表名称或序号（从 1 开始），默认第一个 |
+| `--header-row N` | 表头所在行号（从 1 开始），默认自动识别 |
+| `--map 字段=列名` | 手动指定列映射；可重复、可逗号分隔，值也支持 1 起始的列序号 |
+| `--account` | 为本次导入的所有记录指定账户（覆盖文件里的账户列） |
+| `--category` | 文件没有分类列时使用的默认分类 |
+| `--positive-is` | 没有收支标志列时，正数金额算 `income` 还是 `expense`（默认 `income`） |
+| `--dry-run` | 只预览、不写入 |
+| `--limit` | 预览条数，默认 10 |
+
+可映射字段：`date`、`amount`、`income_amount`、`expense_amount`、`type`、`category`、`account`、`note`。
+
+支持的常见表头（不区分大小写与空格、括号）：
+
+- 日期：`日期`、`交易日期`、`交易时间`、`记账日期`、`发生日期`、`date`
+- 金额：`金额`、`交易金额`、`发生额`、`amount`
+- 收支分列：`收入` / `支出`、`贷方发生额` / `借方发生额`
+- 收支标志：`收支`、`收/支`、`收支类型`、`交易类型`、`借贷标志`
+- 其它：`分类`、`账户`、`支付方式`、`摘要`、`备注`、`商品说明`
 
 ## 账本格式
 
@@ -92,7 +130,8 @@ bookkeeping/
 ├── agents/
 │   └── openai.yaml       # UI 元数据与调用策略
 ├── scripts/
-│   └── ledger.py         # 记账 / 统计 CLI
+│   ├── ledger.py         # 记账 / 统计 / 导入 CLI
+│   └── tabular.py        # 零依赖 CSV / XLSX 读取（标准库实现）
 └── references/
     └── schema.md         # 字段与分类约定
 ```
