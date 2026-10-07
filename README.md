@@ -17,13 +17,13 @@
 把本仓库克隆到 Codex 的技能目录，**目录名保持 `bookkeeping`**：
 
 ```bash
-git clone https://github.com/<you>/bookkeeping.git ~/.codex/skills/bookkeeping
+git clone https://github.com/hzexin5-star/bookkeeping.git ~/.codex/skills/bookkeeping
 ```
 
 Windows PowerShell：
 
 ```powershell
-git clone https://github.com/<you>/bookkeeping.git "$env:USERPROFILE\.codex\skills\bookkeeping"
+git clone https://github.com/hzexin5-star/bookkeeping.git "$env:USERPROFILE\.codex\skills\bookkeeping"
 ```
 
 也可以下载 ZIP 解压到 `~/.codex/skills/bookkeeping`。之后 Codex 会以 `$bookkeeping` 列出该 skill。
@@ -160,7 +160,7 @@ git init
 git add .
 git commit -m "feat: bookkeeping skill"
 git branch -M main
-git remote add origin https://github.com/<you>/bookkeeping.git
+git remote add origin https://github.com/hzexin5-star/bookkeeping.git
 git push -u origin main
 ```
 
