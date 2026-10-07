@@ -24,7 +24,7 @@
 | **Free**（本仓库） | 免费 · MIT | 记账、账单导入、统计汇总、账户结余、Markdown 报表 |
 | **Pro** | **¥36 / 月**（约 $5） | 以上全部 ＋ 可视化 HTML 仪表盘、预算与超支提醒、优先支持 |
 
-Pro 订阅：国内走爱发电 <https://afdian.com/a/hzexin5-star>，海外走 Ko-fi <https://ko-fi.com/hzexin5-star> ｜ 详见 [PRICING.md](PRICING.md)
+Pro 订阅：国内走爱发电 <https://afdian.com/a/hzexin5-star>，海外走 Ko-fi <https://ko-fi.com/ireliaaaa> ｜ 详见 [PRICING.md](PRICING.md)
 
 > 只想记账的话，**免费版就够了**——功能完整、永久免费。
 
