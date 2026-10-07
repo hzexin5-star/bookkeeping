@@ -1,5 +1,10 @@
 # bookkeeping · 账目统计
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org/)
+[![Codex Skill](https://img.shields.io/badge/Codex-Skill-16A34A.svg)](SKILL.md)
+[![Pro](https://img.shields.io/badge/Pro-%245%2Fmonth-ff69b4.svg)](PRICING.md)
+
 一个用于 [Codex](https://chatgpt.com/codex) 的个人记账 skill：录入或批量导入收支，按分类 / 账户 / 时间区间汇总，查询结余，并生成 Markdown 报表。
 
 ## 特性
@@ -11,6 +16,17 @@
 - **多维统计**：按月份或任意区间，按分类、账户汇总收入与支出。
 - **一键报表**：生成 Markdown 格式的账目报表，便于贴进笔记或继续加工。
 - **本地优先**：所有数据保存在你自己的机器上，不联网、不上传。
+
+## 定价
+
+| 版本 | 价格 | 内容 |
+| --- | --- | --- |
+| **Free**（本仓库） | 免费 · MIT | 记账、账单导入、统计汇总、账户结余、Markdown 报表 |
+| **Pro** | **$5 / 月** | 以上全部 ＋ 可视化 HTML 仪表盘、预算与超支提醒、优先支持 |
+
+Pro 订阅：<https://ko-fi.com/hzexin5-star> ｜ 详见 [PRICING.md](PRICING.md)
+
+> 只想记账的话，**免费版就够了**——功能完整、永久免费。
 
 ## 安装
 
