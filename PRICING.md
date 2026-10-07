@@ -30,7 +30,7 @@
 ### 订阅
 
 - **国内** — 爱发电 · 包月赞助：<https://afdian.com/a/hzexin5-star>
-- **海外** — PayPal：<https://paypal.me/hzexin5-star>
+- **海外** — Ko-fi 会员（支持信用卡 / PayPal）：<https://ko-fi.com/hzexin5-star>
 - 每月 ¥36 / $5，可随时取消，取消后不再续费
 - 订阅后即可获得 Pro 包与后续更新
 
@@ -54,4 +54,4 @@ Pro 是给愿意为「省时间 + 更好看」付费的人。如果你只是想�
 可以，¥36/月 是个人价；团队使用请邮件联系。
 
 **海外怎么付？**
-用 PayPal。如果 PayPal 订阅按钮暂时开不了，也可以先按 `paypal.me` 链接一次性支付 $5。
+用 Ko-fi，支持信用卡和 PayPal，订阅后可随时取消。

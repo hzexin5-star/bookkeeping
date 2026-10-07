@@ -1,7 +1,6 @@
 # GitHub 的 Sponsor 按钮指向这里。
 # 说明：GitHub Sponsors 不支持中国大陆收款，因此走第三方。
-# 国内 → 爱发电；海外 → PayPal。
+# 国内 → 爱发电；海外 → Ko-fi（提现走 PayPal）。
 # 如果主页地址和下面不一致，改这两行即可。
-custom:
-  - "https://afdian.com/a/hzexin5-star"
-  - "https://paypal.me/hzexin5-star"
+ko_fi: hzexin5-star
+custom: ["https://afdian.com/a/hzexin5-star"]
