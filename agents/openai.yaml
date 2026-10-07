@@ -1,0 +1,5 @@
+interface:
+  display_name: "账目统计"
+  short_description: "记录日常收支，按分类和账户统计账目，并生成月度报表与余额概览"
+  brand_color: "#16A34A"
+  default_prompt: "Use $bookkeeping to record today's expenses and summarize this month's totals."

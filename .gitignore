@@ -1,0 +1,20 @@
+# 个人账本数据（不要提交到仓库）
+ledger.csv
+*.local.csv
+bookkeeping/
+
+# 生成的报表
+report*.md
+账目报表*.md
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
